@@ -1,0 +1,82 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block title %} Library Management System {% endblock %}
+{% block css %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+    /* Custom CSS styles */
+    .library-heading {
+        color: #9e003f;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .library-description {
+        font-size: 21px;
+        margin-bottom: 30px;
+        color: #333;
+    }
+    .btn-library {
+        margin-top: 20px;
+        padding: 12px 30px;
+        font-size: 18px;
+        background-color: #9e003f;
+        border: none;
+        color: #fff;
+        transition: background-color 0.3s;
+    }
+    .btn-library:hover {
+        background-color: #9e003f;
+    }
+    .library-card {
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+    .library-card img {
+        max-width: 30%;
+        height: auto;
+        margin-bottom: 9px;
+    }
+    .bg-image {
+        background-image: url('{% static "back.jpg" %}');
+        background-size: cover;
+        background-position: center;
+        min-height: 100vh;
+        padding: 50px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+{% endblock %}
+{% block body %}
+<div class="bg-image">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="library-card text-center">
+                    <h1 class="library-heading">Welcome to Library Management System</h1>
+                    <p class="library-description">Register as a student to issue books from the library. You must return the books within 14 days to avoid a fine of Rs 25 per day.</p>
+                    <a href="/student_registration/" class="btn btn-primary btn-library">Register as Student</a>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="library-card text-center">
+                    <img src="{% static 'admin.png' %}" alt="Admin">
+                    <a class="btn btn-outline-primary btn-lg btn-block" href="/admin_login/">Admin</a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="library-card text-center">
+                    <img src="{% static 'students.png' %}" alt="Student">
+                    <a class="btn btn-outline-primary btn-lg btn-block" href="/student_login/">Student</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
